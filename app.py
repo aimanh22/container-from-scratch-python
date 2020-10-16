@@ -4,16 +4,13 @@ import sys
 import spacy
 
 @click.command()
-@click.option("--name")
+@click.option("--sentence ")
 def hello(name):
-    click.echo(f'Hello {name}!')
-
-if __name__ == '__main__':
-    #pylint: disable=no-value-for-parameter
-    input = sys.argv[1:] 
-    str = "".join([" "+i if not i.startswith("'") and i not in string.punctuation else i for i in tokens]).strip()
     nlp = spacy.load('en')
-    doc=nlp(str)
+    doc=nlp(sentence)
     for ent in doc.ents:
         print(ent.text, ent.label_)
+    
+if __name__ == '__main__':
+    #pylint: disable=no-value-for-parameter
     hello()
