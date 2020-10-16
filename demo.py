@@ -5,7 +5,7 @@ import sys
 @click.command()
 @click.option("--s")
 def hello(s):
-    print("Word length:"+len(s))
+    print("Word length:"+str(len(s)))
     
 if __name__ == '__main__':
     #pylint: disable=no-value-for-parameter
