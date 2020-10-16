@@ -5,7 +5,7 @@ import spacy
 
 @click.command()
 @click.option("--sentence ")
-def hello(name):
+def hello(sentence):
     nlp = spacy.load('en')
     doc=nlp(sentence)
     for ent in doc.ents:
