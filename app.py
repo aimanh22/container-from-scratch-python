@@ -4,10 +4,10 @@ import sys
 import spacy
 
 @click.command()
-@click.option("--name ")
-def hello(name):
+@click.option("--s")
+def hello(s):
     nlp = spacy.load('en')
-    doc=nlp(name)
+    doc=nlp(s)
     for ent in doc.ents:
         print(ent.text, ent.label_)
     
